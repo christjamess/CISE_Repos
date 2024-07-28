@@ -18,7 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2  # Updated to the latest version
 
-      
+      - name: List files in the root directory
+        run: ls -la
+
+      - name: List files in the worksheet2 directory
+        run: ls -la ./worksheet2
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1  # Updated to the latest version
