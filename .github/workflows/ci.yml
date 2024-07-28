@@ -31,14 +31,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./worksheet2  # Correct working directory
+        working-directory: ./worksheet2/my-react-app  # Correct working directory
 
       - name: Run the tests
         run: npm test
-        working-directory: ./worksheet2  # Correct working directory
+        working-directory: ./worksheet2/my-react-app  # Correct working directory
 
       - name: Build
         run: npm run build
-        working-directory: ./worksheet2  # Correct working directoryy
+        working-directory: ./worksheet2/my-react-app  # Correct working directoryy
 
 
