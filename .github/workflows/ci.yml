@@ -25,13 +25,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./worksheet2  # Updated to the correct directory
+        working-directory: ./my-react-app  # Updated to the correct directory
 
       - name: Run the tests
         run: npm test
-        working-directory: ./worksheet2  # Updated to the correct directory
+        working-directory: ./my-react-app  # Updated to the correct directory
 
       - name: Build
         run: npm run build
-        working-directory: ./worksheet2  # Updated to the correct directory
+        working-directory: ./my-react-app  # Updated to the correct directory
 
