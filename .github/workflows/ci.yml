@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-defaults:
-  run:
-    working-directory: ./app
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,18 +16,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v3  # Updated to the latest version
+
       - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3  # Updated to the latest version
         with:
           node-version: ${{ matrix.node-version }}
-          
+
       - name: Install dependencies
         run: npm install
-        
+        working-directory: ./app  # Specify working directory here
+
       - name: Run the tests
         run: npm test
-        
+        working-directory: ./app  # Specify working directory here
+
       - name: Build
         run: npm run build
+        working-directory: ./app  # Specify working directory here
