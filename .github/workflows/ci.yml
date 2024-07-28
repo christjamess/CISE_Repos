@@ -16,22 +16,29 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Ensure you're using the latest version
+        uses: actions/checkout@v2  # Updated to the latest version
+
+      - name: List files in the root directory
+        run: ls -la
+
+      - name: List files in the worksheet2 directory
+        run: ls -la ./worksheet2
 
       - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3  # Ensure you're using the latest version
+        uses: actions/setup-node@v1  # Updated to the latest version
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./my-react-app  # Updated to the correct directory
+        working-directory: ./worksheet2  # Correct working directory
 
       - name: Run the tests
         run: npm test
-        working-directory: ./my-react-app  # Updated to the correct directory
+        working-directory: ./worksheet2  # Correct working directory
 
       - name: Build
         run: npm run build
-        working-directory: ./my-react-app  # Updated to the correct directory
+        working-directory: ./worksheet2  # Correct working directory
+
 
